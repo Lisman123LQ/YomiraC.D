@@ -1,0 +1,110 @@
+/* Fondo general con degradado suave rosado */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to bottom right, #ffe6f0, #ffffff);
+}
+
+
+.container {
+    position: relative;
+    z-index: 10; /* Asegura que el texto quede encima */
+}
+
+/* Contenedor principal con marco y sombra */
+.container {
+    text-align: center;
+    padding: 30px;
+    background-color: #fffefc;
+    border-radius: 20px;
+    border: 4px solid #ffd700; /* Marco dorado */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 600px;
+}
+
+/* Títulos con animación */
+h1 {
+    font-size: 36px;
+    color: #8B4513;
+    margin-top: 20px;
+    z-index: 1;
+    animation: textFadeIn 1.2s ease-out both;
+}
+
+/* Animación para que el texto entre suavemente desde arriba */
+@keyframes textFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Contenedor donde aparecen las flores */
+.flower-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+
+/* Flor base */
+.flower {
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    position: relative;
+}
+
+/* Pétalos */
+.petal {
+    width: 45px;
+    height: 90px;
+    background-color: #FFD700;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: 0 100%;
+    animation: fadeInPetal 0.5s ease-in-out both;
+}
+
+/* Posiciones circulares */
+.p1  { transform: translate(-50%, -50%) rotate(0deg); }
+.p2  { transform: translate(-50%, -50%) rotate(36deg); }
+.p3  { transform: translate(-50%, -50%) rotate(72deg); }
+.p4  { transform: translate(-50%, -50%) rotate(108deg); }
+.p5  { transform: translate(-50%, -50%) rotate(144deg); }
+.p6  { transform: translate(-50%, -50%) rotate(180deg); }
+.p7  { transform: translate(-50%, -50%) rotate(216deg); }
+.p8  { transform: translate(-50%, -50%) rotate(252deg); }
+.p9  { transform: translate(-50%, -50%) rotate(288deg); }
+.p10 { transform: translate(-50%, -50%) rotate(324deg); }
+
+/* Animación de entrada del pétalo */
+@keyframes fadeInPetal {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Animación de salida del pétalo (si se usa en JS) */
+@keyframes fadeOutPetal {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
